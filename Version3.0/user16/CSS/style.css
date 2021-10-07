@@ -16,6 +16,10 @@ tr {
 
 th {
 	text-align: center;
-	color: #470505;
+	color: #ffffff;
 	background-color: #003366;
+}
+
+body {
+	background-image: url("../images/beerus.jpeg");
 }
