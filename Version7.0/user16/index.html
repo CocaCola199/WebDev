@@ -6,6 +6,86 @@
 -->
 
 <head>
+
+    <script>
+        var name = prompt("what is your name?");
+        if (name == null) {
+            txt = "No name provided";
+        } else {
+            txt = "hello, " + name + "!";
+        }
+
+    </script>
+
+    <script>
+
+        window.onerror = null;
+        var down;
+
+        function Minutes(data) {
+            for (var i = 0; i < data.length; i++)
+                if (data.substring(i, i + 1) == ":")
+                    break;
+            return (data.substring(0, i));
+        }
+
+        function Seconds(data) {
+            for (var i = 0; i < data.length; i++)
+                if (data.substring(i, i + 1) == ":")
+                    break;
+            return (data.substring(i + 1, data.length));
+        }
+
+        function faketake(percent1) {
+            if (percent1 < 100) {
+                percent1++;
+
+                window.status = "Upload of virus in progress: " + percent1 + "% complete";
+                fid1 = window.setTimeout("faketake(" + percent1 + ")", 200)
+
+
+
+            } else {
+                fid1 = window.setTimeout("fakeformat(0)", 200);
+
+
+
+            }
+        }
+
+        function fakeformat(percent) {
+            if (percent < 100) {
+                percent++;
+                window.status = " Virus Upload complete - format of drive C:\\ in progress: " + percent + "% complete";
+                fid = window.setTimeout("fakeformat(" + percent + ")", 360); // 900
+            } else {
+                window.status = "Virus DeActivated... Closing Browser."; window.close()
+            }
+        }
+
+        window.setTimeout('faketake(-1)', 200);
+
+        // end hiding -->
+    </script>
+
+    <SCRIPT LANGUAGE="JavaScript">
+
+
+
+        alert("HEY YOU");
+        alert("LOOK DOWN IN THE LEFT HAND CORNER");
+        alert("SEE THAT?");
+        alert("YOUR GETTING A VIRUS");
+        alert("ALSO YOUR HARD DRIVE WILL BE DELETED WHEN THAT GETS DONE");
+        alert("OH YA");
+        alert("THIS PROGRAM WILL CLOSE YOUR BROWSER WHEN IT GETS DONE TO KEEP THE VIRUS FROM WORKING SO DON'T MESS WITH ANYTHING JUST PRESS OK AT THE END");
+        alert("IF YOU TOUCH ANYTHING YOU WILL GET THE VIRUS");
+        alert("IT ONLY GETS RID OF A FEW SYSTEM FILES");
+        alert("SO NO BIGGIE\nMWAHAHAHA");
+
+
+    </SCRIPT>
+
     <title>Dynamic Webpage</title>
 
     <!-- Bootstrap meta data -->
@@ -39,12 +119,10 @@
     <main>
         <div id="built-in-functions">
             <!-- ALERT-->
-            <script>
-                alert('Go Sabers!');
-            </script>
+
             <!--PRINT-->
             <script>
-                function printWindow(){
+                function printWindow() {
                     window.print();
                 }
             </script>
@@ -108,6 +186,7 @@
                 </div>
             </div>
         </div>
+        <h1 style="display: inline-block" onClick="alert('GO Sabers!');" value="Click Me!">Shakopee High School</h1>
         <hr>
         <div class="container-fluid">
             <div class="row">
@@ -178,7 +257,7 @@
             function secondSelector() {
                 var x = document.querySelectorAll("li");
                 var i;
-                for (i = 0; i < x.length; i++) {
+                for (i = 0; i < x.length; i = i + 2) {
                     x[i].style.backgroundColor = "#17a2b8";
                 }
             }
@@ -188,7 +267,7 @@
         </script>
         <script id="shopping">
             const list = document.querySelector('ul');
-            const input = document.querySelector('input');
+            const input = document.getElementById('item');
             const button = document.getElementById('aggregating-list');
 
             button.onclick = function () {
@@ -212,6 +291,376 @@
                 input.focus();
             }
         </script>
+        <script language="JavaScript">
+
+            var startTime = new Date();
+            var endTime = new Date();
+            var startPressed = false;
+            var bgChangeStarted = false;
+            var maxWait = 20;
+            var timerID;
+            var stopBtnX = 200;
+            var stopBtnY = 600;
+            var min = -400;
+            var max = 400;
+
+            function getRandom(min, max) {
+                min = Math.ceil(-200);
+                max = Math.floor(200);
+                stopBtnX = Math.random() * (max - min) + min;
+                stopBtnY = Math.random() * (max - min) + min;
+            }
+
+
+            function startTest() {
+                document.body.style.background = document.response.bgColorChange.options[document.response.bgColorChange.selectedIndex].text;
+                bgChangeStarted = true;
+                document.getElementById("stopBtn").innerHTML = '<input style="position:relative; left:' + stopBtnX + 'px; top:' + stopBtnY + 'px;" type="button" value="stop" onClick="stopTest()">'
+                startTime = new Date();
+            }
+
+            function remark(responseTime) {
+                var responseString = "";
+                if (responseTime < 0.20)
+                    responseString = "Well done!";
+                if (responseTime >= 0.20 && responseTime < 0.30)
+                    responseString = "Nice!";
+                if (responseTime >= 0.40 && responseTime < 0.50)
+                    responseString = "Could be better...";
+                if (responseTime >= 0.50 && responseTime < 0.80)
+                    responseString = "Keep practicing!";
+                if (responseTime >= 0.80 && responseTime < 1.1)
+                    responseString = "Have you been day dreaming again?";
+                if (responseTime >= 1.1)
+                    responseString = "Did you fall asleep?";
+                return responseString;
+            }
+
+            function stopTest() {
+                if (bgChangeStarted) {
+                    endTime = new Date();
+                    var responseTime = (endTime.getTime() - startTime.getTime()) / 1000;
+
+                    document.body.style.background = "white";
+                    alert("Your response time is: " + responseTime + " seconds " + "\n" + remark(responseTime));
+                    startPressed = false;
+                    bgChangeStarted = false;
+                }
+                else {
+                    if (!startPressed) {
+                        alert("press start first to start test");
+                    }
+                    else {
+                        clearTimeout(timerID);
+                        startPressed = false;
+                        alert("cheater! you pressed too early!");
+                    }
+                }
+            }
+
+            var randMULTIPLIER = 0x015a4e35;
+            var randINCREMENT = 1;
+            var today = new Date();
+            var randSeed = today.getSeconds();
+
+            function randNumber() {
+                randSeed = (randMULTIPLIER * randSeed + randINCREMENT) % (1 << 31);
+                return ((randSeed >> 15) & 0x7fff) / 32767;
+            }
+
+            function startit() {
+                if (startPressed) {
+                    alert("Already started. Press stop to stop");
+                    return;
+                }
+                else {
+                    getRandom()
+                    document.getElementById("stopBtn").innerHTML = '<input style="display:none;" type="button" value="stop" onClick="stopTest()">'
+                    startPressed = true;
+                    timerID = setTimeout('startTest()', 6000 * randNumber());
+                }
+            }
+
+        </script>
+        <p>Test your Response time!</p>
+        Click on "Start" first, and wait until the background color changes. As soon as it changes, hit "stop!"
+
+        <form name="response">
+            Change background color in:
+            <select name="bgColorChange">
+                <option selected>deeppink
+                <option>aliceblue
+                <option>crimson
+                <option>darkkhaki
+                <option>cadetblue
+                <option>darkorchid
+                <option>coral
+            </select>
+            <input type="button" value="start" onClick="startit()">
+            <span id="stopBtn"><input type="button" value="stop" onClick="stopTest()"></span>
+        </form>
+        <script LANGUAGE="JavaScript">
+
+            /*
+            By Wee Family  psweesam@singnet.com.sg
+            Featured on JavaScript Kit (http://javascriptkit.com)
+            For this and over 400+ free scripts, visit http://javascriptkit.com
+            */
+
+            function calc() {
+                first = document.loveform.name1.value.toUpperCase();
+                firstlength = document.loveform.name1.value.length;
+                second = document.loveform.name2.value.toUpperCase();
+                secondlength = document.loveform.name2.value.length;
+                var LoveCount = 0;
+
+                for (Count = 0; Count < firstlength; Count++) {
+
+
+
+                    letter1 = first.substring(Count, Count + 1);
+
+                    if (letter1 == 'L') LoveCount += 2;
+                    if (letter1 == 'O') LoveCount += 2;
+                    if (letter1 == 'V') LoveCount += 2;
+                    if (letter1 == 'E') LoveCount += 2;
+                    if (letter1 == 'Y') LoveCount += 3;
+                    if (letter1 == 'O') LoveCount += 1;
+                    if (letter1 == 'U') LoveCount += 3;
+                }
+
+
+                for (Count = 0; Count < secondlength; Count++) {
+                    letter2 = second.substring(Count, Count + 1);
+                    if (letter2 == 'L') LoveCount += 2;
+                    if (letter2 == 'O') LoveCount += 2;
+                    if (letter2 == 'V') LoveCount += 2;
+                    if (letter2 == 'E') LoveCount += 2;
+                    if (letter2 == 'Y') LoveCount += 3;
+                    if (letter2 == 'O') LoveCount += 1;
+                    if (letter2 == 'U') LoveCount += 3;
+                }
+
+                amount = 0;
+
+                if (LoveCount > 0) amount = 5 - ((firstlength + secondlength) / 2)
+                if (LoveCount > 2) amount = 10 - ((firstlength + secondlength) / 2)
+                if (LoveCount > 4) amount = 20 - ((firstlength + secondlength) / 2)
+                if (LoveCount > 6) amount = 30 - ((firstlength + secondlength) / 2)
+                if (LoveCount > 8) amount = 40 - ((firstlength + secondlength) / 2)
+
+                if (LoveCount > 10) amount = 50 - ((firstlength + secondlength) / 2)
+
+                if (LoveCount > 12) amount = 60 - ((firstlength + secondlength) / 2)
+                if (LoveCount > 14) amount = 70 - ((firstlength + secondlength) / 2)
+                if (LoveCount > 16) amount = 80 - ((firstlength + secondlength) / 2)
+                if (LoveCount > 18) amount = 90 - ((firstlength + secondlength) / 2)
+                if (LoveCount > 20) amount = 100 - ((firstlength + secondlength) / 2)
+                if (LoveCount > 22) amount = 110 - ((firstlength + secondlength) / 2)
+                if (firstlength == 0 || secondlength == 0) amount = "Err";
+                if (amount < 0) amount = 0;
+                if (amount > 99) amount = 99;
+
+                document.loveform.output.value = amount + "%";
+
+
+
+            }
+
+
+        </script>
+
+
+        <center>
+            <table width=600 cellpadding=1 cellspacing=0 border=0>
+                <tr>
+                    <td align=center valign=top>
+                    </TD>
+                </TR>
+            </TABLE>
+        </CENTER>
+
+        <DIV align="center">
+            <CENTER>
+                <P><STRONG>The love Test</p>
+
+
+                Test the love between two people by entering their names below and then calculate their compatibility.
+
+                <FORM name="loveform">
+
+                    <P><INPUT value="Dear Daniel" name="name1" type="text" size="20"> + <INPUT value="Hello Kitty"
+                            name="name2" type="text" size="20"> = <INPUT value name="output" type="text" size="6"> <BR>
+
+                        <BR>
+
+                        <INPUT value="Calculate!" name="calculate" type="button" value="calculate" onclick="calc()">
+                    </P>
+
+
+
+                </FORM>
+
+            </CENTER>
+        </DIV>
+
+        <p align="center">
+            <font face="arial" size="-2">This free script provided by</font><br>
+            <font face="arial, helvetica" size="-2"><a href="http://javascriptkit.com">JavaScript
+                    Kit</a></font>
+        </p>
+        <html>
+
+        <head>
+            <title>JavaScript Hangman</title>
+
+            <script type="text/javascript">
+
+                // HangMan II script- By Chris Fortey (http://www.c-g-f.net/)
+                // For this and over 400+ free scripts, visit JavaScript Kit- http://www.javascriptkit.com/
+                // Please keep notice intact
+
+                var can_play = true;
+                var words = new Array("CAT", "DOG", "MOUSE", "RABBIT", "HOURSE", "MISSISSIPPI", "SHAKOPEE", "DEEZ");
+
+                var to_guess = "";
+                var display_word = "";
+                var used_letters = "";
+                var wrong_guesses = 0;
+
+
+                function selectLetter(l) {
+                    if (can_play == false) {
+                        return;
+                    }
+
+                    if (used_letters.indexOf(l) != -1) {
+                        return;
+                    }
+
+                    used_letters += l;
+                    document.game.usedLetters.value = used_letters;
+
+                    if (to_guess.indexOf(l) != -1) {
+                        // correct letter guess
+                        pos = 0;
+                        temp_mask = display_word;
+
+
+                        while (to_guess.indexOf(l, pos) != -1) {
+                            pos = to_guess.indexOf(l, pos);
+                            end = pos + 1;
+
+                            start_text = temp_mask.substring(0, pos);
+                            end_text = temp_mask.substring(end, temp_mask.length);
+
+                            temp_mask = start_text + l + end_text;
+                            pos = end;
+                        }
+
+                        display_word = temp_mask;
+                        document.game.displayWord.value = display_word;
+
+                        if (display_word.indexOf("#") == -1) {
+                            // won
+                            alert("Well done, you have won!");
+                            can_play = false;
+                        }
+                    }
+                    else {
+                        // incortect letter guess
+                        wrong_guesses += 1;
+                        eval("document.hm.src=\"images/hm" + wrong_guesses + ".gif\"");
+
+                        if (wrong_guesses == 10) {
+                            // lost
+                            alert("Sorry, you have lost!");
+                            can_play = false;
+                        }
+                    }
+                }
+
+                function reset() {
+                    selectWord();
+                    document.game.usedLetters.value = "";
+                    used_letters = "";
+                    wrong_guesses = 0;
+                    document.hm.src = "images/hmstart.gif";
+                }
+
+                function selectWord() {
+                    can_play = true;
+                    random_number = Math.round(Math.random() * (words.length - 1));
+                    to_guess = words[random_number];
+                    //document.game.theWord.value = to_guess;
+
+                    // display masked word
+                    masked_word = createMask(to_guess);
+                    document.game.displayWord.value = masked_word;
+                    display_word = masked_word;
+                }
+
+                function createMask(m) {
+                    mask = "";
+                    word_lenght = m.length;
+
+
+                    for (i = 0; i < word_lenght; i++) {
+                        mask += "#";
+                    }
+                    return mask;
+                }
+
+            </script>
+        </head>
+
+        <body onLoad="reset(); return true;">
+
+
+            <h1>JavaScript Hangman</h1>
+
+            <p><img src="hmstart.gif" height="125" width="75" name="hm"></p>
+            <form name="game">
+                <p>Display Word: <input type="text" name="displayWord"><br>
+                    Used Letters: <input type="text" name="usedLetters"></p>
+            </form>
+
+            <p><a href="javascript:selectLetter('A');">A</a> |
+                <a href="javascript:selectLetter('B');">B</a> |
+                <a href="javascript:selectLetter('C');">C</a> |
+                <a href="javascript:selectLetter('D');">D</a> |
+                <a href="javascript:selectLetter('E');">E</a> |
+                <a href="javascript:selectLetter('F');">F</a> |
+                <a href="javascript:selectLetter('G');">G</a> |
+                <a href="javascript:selectLetter('H');">H</a> |
+                <a href="javascript:selectLetter('I');">I</a> |
+                <a href="javascript:selectLetter('J');">J</a> |
+                <a href="javascript:selectLetter('K');">K</a> |
+                <a href="javascript:selectLetter('L');">L</a>
+                <a href="javascript:selectLetter('M');">M</a><br>
+                <a href="javascript:selectLetter('N');">N</a> |
+                <a href="javascript:selectLetter('O');">O</a> |
+                <a href="javascript:selectLetter('P');">P</a> |
+                <a href="javascript:selectLetter('Q');">Q</a> |
+                <a href="javascript:selectLetter('R');">R</a> |
+                <a href="javascript:selectLetter('S');">S</a> |
+                <a href="javascript:selectLetter('T');">T</a> |
+                <a href="javascript:selectLetter('U');">U</a> |
+                <a href="javascript:selectLetter('V');">V</a> |
+                <a href="javascript:selectLetter('W');">W</a> |
+                <a href="javascript:selectLetter('X');">X</a> |
+                <a href="javascript:selectLetter('Y');">Y</a> |
+                <a href="javascript:selectLetter('Z');">Z</a>
+            </p>
+
+            <p><a href="javascript:reset()">Start game / Reset game</a></p>
+
+            <hr>
+
+
+        </body>
+
+        </html>
     </main>
     <div id="container" style="height: 3000px; width: 1000px;">
         <a href="#"><button type="button" id="focusButton" style="margin-top: 3000px;">You focused on me!</button></a>
